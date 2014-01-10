@@ -1,0 +1,15 @@
+
+{% extends 'CrudCrudBundle::layout.html.twig' %}
+
+{% block body %}
+    <form action="" method="post" class="order">
+        <div>Item Purchased: <select name='item'>
+            {% for item in items %}
+                <option value='{{item.getId()}}'>{{item.getName()}}</option>
+                {% endfor %}
+            </select></div>
+        <div>Date Purchased: <input name='date'></div>
+        <div>Discount: <input name='discount'></div>
+        <input type="submit" value="Add" />
+    </form>
+{% endblock %}

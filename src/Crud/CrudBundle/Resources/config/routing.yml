@@ -1,0 +1,19 @@
+crud_crud_homepage:
+    pattern:  /
+    defaults: { _controller: CrudCrudBundle:Page:index }
+    requirements:
+        _method:  GET
+        
+CrudCrudBundle_blog_show:
+    pattern:  /{id}
+    defaults: { _controller: CrudCrudBundle:Page:index }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+    
+CrudCrudBundle_new_show:
+    pattern:  /new
+    defaults: { _controller: CrudCrudBundle:New:index }
+    requirements:
+        _method:  GET|POST
+       

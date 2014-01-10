@@ -1,0 +1,21 @@
+
+{% extends 'CrudCrudBundle::layout.html.twig' %}
+
+{% block body %}
+    <form action="" method="post" class="order">
+        <div>Order ID: {{order.getId()}}</div>
+        <div>Item Purchased: {{item.getName()}}</div>
+        <div>Date Purchased: {{order.getPurchaseDate()|date('Y-m-d')}}</div>
+        <div>Discount: <input name='discount' value='{{order.getDiscount()}}'></div>
+        <input type="submit" value="Edit" />
+    </form>
+<form action="" method="post" class="order">
+        <input type='hidden' value='{{order.getId()}}' name='deleted'>
+        <input type="submit" value="Delete" />
+    </form>
+<form action="./new" method="post" class="order">
+        <input type='hidden' value='{{order.getId()}}' name='new'>
+        <input type="submit" value="New" />
+    </form>
+
+{% endblock %}
