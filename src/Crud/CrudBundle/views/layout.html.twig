@@ -1,0 +1,14 @@
+
+{% extends '::base.html.twig' %}
+
+{% block sidebar %}
+<table border='2'>
+    <tr><th>Order ID</th><th>Date</th></tr>
+{% for order in orders %}
+    <tr style="cursor: pointer;" onclick="location.href='/cadzima/web/app_dev.php/{{order.getId()}}'"><td>{{order.getId()}}</td><td>{{order.getPurchaseDate()|date('Y-m-d')}}</tr>
+            
+{% endfor %}
+
+</table>
+   
+{% endblock %}
