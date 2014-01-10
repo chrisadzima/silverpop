@@ -77,7 +77,11 @@ class PageController extends Controller {
                 return $this->render('CrudCrudBundle:Page:index.html.twig', array('order' => $order, 'item' => $item, 'orders' => $allOrders));
             }
         } else {
-            return $this->render('CrudCrudBundle:Page:blank.html.twig');
+            $em = $this->getDoctrine()->getEntityManager();
+            $allOrders = $em->getRepository('CrudCrudBundle:Order')->findAll();
+                //trap($allOrders);
+                return $this->render('CrudCrudBundle:Page:blank.html.twig', array('orders' => $allOrders));
+           
         }
     }
 
